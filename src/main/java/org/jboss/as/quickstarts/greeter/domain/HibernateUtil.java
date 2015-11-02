@@ -26,7 +26,7 @@ public class HibernateUtil {
                 .setProperty("hibernate.hbm2ddl.auto", "")
                 .setProperty("hibernate.current_session_context_class", "jta")
                 .setProperty("hibernate.transaction.jta.platform", "JBossAS")
-                .setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.CMTTransactionFactory")
+//                .setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.CMTTransactionFactory")
                 .setProperty("show_sql", "true")
                 .setProperty("format_sql", "true")
                 .addAnnotatedClass( User.class );
