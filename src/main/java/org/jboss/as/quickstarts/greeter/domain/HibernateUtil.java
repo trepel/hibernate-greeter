@@ -26,7 +26,13 @@ public class HibernateUtil {
                 .setProperty("hibernate.hbm2ddl.auto", "")
                 .setProperty("hibernate.current_session_context_class", "jta")
                 .setProperty("hibernate.transaction.jta.platform", "JBossAS")
-//                .setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.CMTTransactionFactory")
+
+// both fully qualified name or short-name work
+                .setProperty("hibernate.transaction.coordinator_class", "jta")
+//                .setProperty("hibernate.transaction.coordinator_class", "org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl")
+
+// this doesn't work in Hibernate5
+//                .setProperty("hibernate.transaction.factory_class", "org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl")
                 .setProperty("show_sql", "true")
                 .setProperty("format_sql", "true")
                 .addAnnotatedClass( User.class );
